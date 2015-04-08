@@ -24,8 +24,8 @@ var users = [{
     name: 'a'
 }];
 
-var onFetchOneUserSuccess = function(user) {
-    users = traction.merge(user).to(users).basedOn('id');
+var onFetchOneUserSuccess = function(newUser) {
+    users = traction.merge(newUser).to(users).basedOn('id');
 };
 
 onFetchOneUserSuccess({
@@ -65,8 +65,8 @@ var users = [{
     name: 'b'
 }];
 
-var onFetchOneUserSuccess = function(users) {
-    users = traction.merge(users).to(users).basedOn('id');
+var onFetchOneUserSuccess = function(newUsers) {
+    users = traction.merge(newUsers).to(users).basedOn('id');
 };
 
 onFetchOneUserSuccess({

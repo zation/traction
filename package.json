@@ -1,6 +1,6 @@
 {
   "name": "traction",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An util tool to merge store data for flux architecture",
   "main": "index.js",
   "scripts": {
