@@ -1,0 +1,24 @@
+{
+  "name": "traction",
+  "version": "0.0.1",
+  "description": "An util tool to merge store data for flux architecture",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zation/traction.git"
+  },
+  "keywords": [
+    "flux",
+    "store",
+    "merge"
+  ],
+  "author": "Zation <zation1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zation/traction/issues"
+  },
+  "homepage": "https://github.com/zation/traction"
+}
