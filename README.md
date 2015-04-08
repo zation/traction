@@ -93,3 +93,5 @@ The output should be:
     name: 'd'
 }]
 ```
+
+**NOTICE**: the merge is deeply merge.

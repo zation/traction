@@ -60,7 +60,9 @@ describe('traction', function() {
       id: 1,
       name: 'liu',
       email: 'liu@gmail.com',
-      phone: '123'
+      phone: {
+        number: '123'
+      }
     }, {
       id: 3,
       name: 'jex',
@@ -69,7 +71,8 @@ describe('traction', function() {
     var oldArray = [{
       id: 1,
       name: 'yang',
-      email: 'yang@gmail.com'
+      email: 'yang@gmail.com',
+      list: [1, 2]
     }, {
       id: 2,
       name: 'qiu',
@@ -80,7 +83,10 @@ describe('traction', function() {
       id: 1,
       name: 'liu',
       email: 'liu@gmail.com',
-      phone: '123'
+      phone: {
+        number: '123'
+      },
+      list: [1, 2]
     }, {
       id: 2,
       name: 'qiu',
