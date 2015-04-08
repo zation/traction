@@ -3,9 +3,9 @@
 var chai = require('chai');
 chai.should();
 
-var utils = require('../lib/traction');
+var traction = require('../lib/traction');
 
-describe('utils', function() {
+describe('traction', function() {
   describe('should merge object to array based on id', function() {
     it('when id is existed', function() {
       var object = {
@@ -20,12 +20,37 @@ describe('utils', function() {
         name: 'qiu'
       }];
 
-      utils.merge(object).to(array).basedOn('id').should.eql([{
+      traction.merge(object).to(array).basedOn('id').should.eql([{
         id: 1,
         name: 'liu'
       }, {
         id: 2,
         name: 'qiu'
+      }]);
+    });
+
+    it('when id is not existed', function() {
+      var object = {
+        id: 3,
+        name: 'liu'
+      };
+      var array = [{
+        id: 1,
+        name: 'yang'
+      }, {
+        id: 2,
+        name: 'qiu'
+      }];
+
+      traction.merge(object).to(array).basedOn('id').should.eql([{
+        id: 1,
+        name: 'yang'
+      }, {
+        id: 2,
+        name: 'qiu'
+      }, {
+        id: 3,
+        name: 'liu'
       }]);
     });
   });
@@ -51,7 +76,7 @@ describe('utils', function() {
       email: 'qiu@gmail.com'
     }];
 
-    utils.merge(newArray).to(oldArray).basedOn('id').should.eql([{
+    traction.merge(newArray).to(oldArray).basedOn('id').should.eql([{
       id: 1,
       name: 'liu',
       email: 'liu@gmail.com',
