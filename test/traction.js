@@ -67,6 +67,10 @@ describe('traction', function() {
       id: 3,
       name: 'jex',
       email: 'jex@gmail.com'
+    }, {
+      id: 4,
+      name: 'daniel',
+      email: 'daniel@gmail.com'
     }];
     var oldArray = [{
       id: 1,
@@ -77,6 +81,10 @@ describe('traction', function() {
       id: 2,
       name: 'qiu',
       email: 'qiu@gmail.com'
+    }, {
+      id: 4,
+      name: 'qin',
+      email: 'qin@gmail.com'
     }];
 
     traction.merge(newArray).to(oldArray).basedOn('id').should.eql([{
@@ -91,6 +99,10 @@ describe('traction', function() {
       id: 2,
       name: 'qiu',
       email: 'qiu@gmail.com'
+    }, {
+      id: 4,
+      name: 'daniel',
+      email: 'daniel@gmail.com'
     }, {
       id: 3,
       name: 'jex',
