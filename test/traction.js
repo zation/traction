@@ -109,4 +109,54 @@ describe('traction', function() {
       email: 'jex@gmail.com'
     }]);
   });
+
+  it('should replace old value with new value for object', function() {
+    var newObject = {
+      id: 1,
+      list: [],
+      people: {
+        name: 'Liu'
+      }
+    };
+    var oldObject = [{
+      id: 1,
+      list: [1],
+      people: {
+        phone: 123
+      }
+    }];
+
+    traction.merge(newObject).to(oldObject).basedOn('id').should.eql([{
+      id: 1,
+      list: [],
+      people: {
+        name: 'Liu'
+      }
+    }]);
+  });
+
+  it('should replace old value with new value for array', function() {
+    var newArray = [{
+      id: 1,
+      list: [],
+      people: {
+        name: 'Liu'
+      }
+    }];
+    var oldArray = [{
+      id: 1,
+      list: [1],
+      people: {
+        phone: 123
+      }
+    }];
+
+    traction.merge(newArray).to(oldArray).basedOn('id').should.eql([{
+      id: 1,
+      list: [],
+      people: {
+        name: 'Liu'
+      }
+    }]);
+  });
 });
