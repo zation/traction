@@ -159,4 +159,31 @@ describe('traction', function() {
       }
     }]);
   });
+
+  it('should support multiple keys', function() {
+    var newData = {
+      name: 'yang',
+      gender: 'female',
+      data: 'test'
+    };
+    var oldArray = [{
+      name: 'yang',
+      gender: 'male',
+      data: 'yoyo'
+    }, {
+      name: 'yang',
+      gender: 'female',
+      data: 'heihei'
+    }];
+
+    traction.merge(newData).to(oldArray).basedOn('name', 'gender').should.eql([{
+      name: 'yang',
+      gender: 'male',
+      data: 'yoyo'
+    }, {
+      name: 'yang',
+      gender: 'female',
+      data: 'test'
+    }]);
+  });
 });

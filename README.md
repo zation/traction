@@ -95,3 +95,46 @@ The output should be:
 ```
 
 **NOTICE**: the merge is deeply merge.
+
+### merge based on multiple keys
+
+Say we have an UsersStore, and we fetch one user from API:
+
+```js
+var traction = require('traction');
+var users = [{
+    name: 'a',
+    gender: 'male',
+    age: 11
+}, {
+   name: 'a',
+   gender: 'female',
+   age: 20
+}];
+
+var onFetchOneUserSuccess = function(newUser) {
+    users = traction.merge(newUser).to(users).basedOn('id');
+};
+
+onFetchOneUserSuccess({
+    name: 'a',
+    gender: 'female',
+    age: 30
+});
+
+console.log(users);
+```
+
+The output should be:
+
+```js
+[{
+     name: 'a',
+     gender: 'male',
+     age: 11
+}, {
+    name: 'a',
+    gender: 'female',
+    age: 30
+}]
+```
