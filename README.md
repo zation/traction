@@ -96,7 +96,7 @@ The output should be:
 
 **NOTICE**: the merge is deeply merge.
 
-### merge based on multiple keys
+### Merge based on multiple keys
 
 Say we have an UsersStore, and we fetch one user from API:
 
@@ -113,7 +113,7 @@ var users = [{
 }];
 
 var onFetchOneUserSuccess = function(newUser) {
-    users = traction.merge(newUser).to(users).basedOn('id');
+    users = traction.merge(newUser).to(users).basedOn('name', 'gender');
 };
 
 onFetchOneUserSuccess({
